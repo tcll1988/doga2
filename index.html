@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#153e45">
+  <meta name="description" content="日本語で学ぶ『動画中国語②』。5課の表現・単語・HSK4級聴解練習と音声を収録。">
+  <title>動画中国語② | 聴いて、読んで、確かめる</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%23153e45'/%3E%3Cpath d='M15 17h16c7 0 10 3 10 10v22c-2-3-5-4-10-4H15z' fill='%23e8c980'/%3E%3Cpath d='M49 17H33c-7 0-10 3-10 10v22c2-3 5-4 10-4h16z' fill='%23fff9ec'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <!-- Each lesson contains its own expressions, vocabulary, questions and answers. -->
+  <script defer src="data/lessons/lesson-01.js"></script>
+  <script defer src="data/lessons/lesson-02.js"></script>
+  <script defer src="data/lessons/lesson-03.js"></script>
+  <script defer src="data/lessons/lesson-04.js"></script>
+  <script defer src="data/lessons/lesson-05.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="課の一覧">
+      <div class="brand"><span class="brand-mark">中</span><span><strong>動画中国語②</strong><small>リスニング教材</small></span></div>
+      <p class="side-label">はじめに · 全5課</p>
+      <nav id="lesson-nav" class="lesson-nav"></nav>
+      <div class="side-note"><span class="side-note-icon">♫</span><span>音声を聴き、設問に答え、聴解原文で確認できます。</span></div>
+    </aside>
+    <main id="main" class="main-content" tabindex="-1">
+      <header class="mobile-header"><span class="brand-mark">中</span><strong>動画中国語②</strong></header>
+      <div class="mobile-lessons"><label for="lesson-select">課を選ぶ</label><select id="lesson-select"></select></div>
+      <div class="topline"><span class="eyebrow">HSK 4級 聴解練習</span><a href="assets/動画2テキスト.pdf" target="_blank" rel="noopener" class="source-link">原教材PDF ↗</a></div>
+      <section class="lesson-heading"><div><span id="lesson-index" class="lesson-index"></span><h1 id="lesson-title"></h1><p id="lesson-intro"></p></div><div class="heading-stamp" aria-hidden="true"><span>聴</span><span>読</span><span>練</span></div></section>
+      <nav class="tabs" aria-label="学習内容" role="tablist"><button type="button" class="tab" data-tab="words" role="tab" aria-selected="true">表現・単語</button><button type="button" class="tab" data-tab="practice" role="tab" aria-selected="false">聴解練習 <span id="progress-pill"></span></button></nav>
+      <div id="content" role="tabpanel" aria-live="polite"></div>
+      <footer class="footer">動画中国語② · 日本語で学ぶ中国語 · 学習の進捗はこの端末に保存されます。</footer>
+    </main>
+  </div>
+  <div class="player" id="player" hidden><div class="player-copy"><strong id="player-title">音声</strong><span id="player-status" class="player-status" role="status">停止中</span><small id="player-subtitle">再生準備中</small></div><audio id="audio-player" controls preload="none"></audio><label class="speed">再生速度 <select id="speed-select" aria-label="再生速度"><option value="0.5">0.5×</option><option value="0.75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label><button id="player-stop" type="button" class="player-stop" aria-label="音声を停止">■ 停止</button><button id="player-close" type="button" class="player-close" aria-label="プレーヤーを閉じる">×</button></div>
+  <!-- Edit the introduction text here; it is shown before lesson one. -->
+  <template id="intro-template">
+<div class="guide-summary"><div class="guide-stats"><div><strong>45</strong><span>問</span></div><div><strong>3</strong><span>部分</span></div><div><strong>30</strong><span>分</span></div></div><p>原教材によると、HSK（四級）の聴解は３つの部分、計45問です。試験では音声が各問１回流れ、解答時間は約30分と説明されています。この電子教材では、練習のために音声を繰り返し再生できます。</p></div>
+      <div class="section-head"><h2>３つの部分</h2><small>原教材の説明より</small></div>
+      <div class="guide-grid">
+        <article class="guide-card"><span class="guide-part">第一部分 · 第1〜10問</span><h3>正誤を判断する</h3><p>短い録音を聴き、提示された文が内容と一致するかを判断します。解答時間の目安は１問につき約10秒です。</p><div class="guide-tip"><strong>聴く前に</strong><span>文中の鍵となる単語を見つけておきましょう。</span></div></article>
+        <article class="guide-card"><span class="guide-part">第二部分 · 第11〜25問</span><h3>短い会話を聴く</h3><p>会話と質問を聴き、４つの選択肢から答えを選びます。解答時間の目安は１問につき約17秒です。</p><div class="guide-tip"><strong>聴く前に</strong><span>選択肢を先に読み、日常表現とキーワードに注目しましょう。</span></div></article>
+        <article class="guide-card"><span class="guide-part">第三部分 · 第26〜45問</span><h3>長めの内容をつかむ</h3><p>長めの会話や説明文を聴き、質問に最も合う答えを４つの中から選びます。解答時間の目安は１問につき約17秒です。</p><div class="guide-tip"><strong>聴く前に</strong><span>選択肢から話題を予測し、慣用表現や要点を聴き取りましょう。</span></div></article>
+      </div>
+      <div class="section-head guide-usage-title"><h2>この教材の使い方</h2><small>初めて使う人へ</small></div>
+      <ol class="guide-usage">
+        <li><span class="guide-step">01</span><div><h3>課を選び、表現と単語を聴く</h3><p>第一課から第五課まで選べます。「表現・単語」で中国語と日本語訳を見ながら表現・単語のカードを押して発音を聴きましょう。ピンインは必要なときに表示できます。</p></div></li>
+        <li><span class="guide-step">02</span><div><h3>聴解練習で答える</h3><p>第一～第三部分を選び、音声を聴いて小問に答えます。小問は毎回ランダムに並び、同じ音声の２問は一緒に表示されます。カードをもう一度押すと一時停止・再開できます。画面下のプレーヤーで停止と再生速度の変更ができます（初期値は１倍速）。</p></div></li>
+        <li><span class="guide-step">03</span><div><h3>結果と原文を確認する</h3><p>正解すると励ましの言葉が表示されます。間違えた場合は正解と聴解原文がすぐに表示され、確認後にその問題だけ再挑戦できます。正解した問題も「聴解原文を見る」で確認できます。</p></div></li>
+        <li><span class="guide-step">04</span><div><h3>もう一度練習する</h3><p>「この部分をもう一度」でその部分の解答を消し、順番を変えて挑戦できます。解答状況は使っているブラウザーに保存されます。</p></div></li>
+      </ol>
+      <div class="guide-next"><div><h2>第一課から始めましょう</h2><p>まずは表現と単語の発音を聴き、聴解練習に進んでください。</p></div><button type="button" class="guide-start" data-lesson="1">第一課へ進む <span aria-hidden="true">→</span></button></div>
+      <p class="guide-source">HSK試験の説明の出典：付属PDF「新漢語水平考試（四級）聴解部分についての説明」</p>
+  </template>
+</body>
+</html>
+
